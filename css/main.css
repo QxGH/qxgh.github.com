@@ -1272,12 +1272,12 @@ pre .javascript .function {
   text-align: center;
   word-break: break-word;
   font-weight: 400;
-  background-color: #b9d3ee;
+  background-color: #e3e3e3;
   border-radius: 0.3em;
   line-height: 1em;
   padding-bottom: 0.12em;
   padding-top: 0.12em;
-  box-shadow: 2px 2px 7px #9fb6cd;
+  box-shadow: 2px 2px 7px #ababab;
 }
 @media (max-width: 767px) {
   .post-title {
@@ -2068,7 +2068,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d0deff;
+  background: #e291ff;
 }
 .links-of-blogroll {
   font-size: 13px;
