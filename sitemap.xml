@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/about/index.html</loc>
+    
+    <lastmod>2018-03-08T03:43:06.597Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/08/pageabout/</loc>
+    
+    <lastmod>2018-03-08T03:39:03.532Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/404.html</loc>
+    
+    <lastmod>2018-03-07T10:13:08.248Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/07/test1/</loc>
+    
+    <lastmod>2018-03-07T09:43:46.296Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/07/hexo-%E4%B8%BB%E9%A2%98/</loc>
+    
+    <lastmod>2018-03-07T07:05:16.974Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/07/%E4%BD%A0%E5%A5%BD-Hexo/</loc>
+    
+    <lastmod>2018-03-07T06:18:30.059Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2018/03/07/hello-world/</loc>
+    
+    <lastmod>2018-03-07T05:31:06.573Z</lastmod>
+    
+  </url>
+  
+</urlset>
