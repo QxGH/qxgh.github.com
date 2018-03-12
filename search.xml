@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Chrome自动填充input文本框,黄底蓝边框问题]]></title>
+    <url>%2F2018%2F03%2F09%2FChrome%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85input%E6%96%87%E6%9C%AC%E6%A1%86-%E9%BB%84%E5%BA%95%E8%93%9D%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[谷歌浏览器（Chrome）在开启自动填充账号密码功能时，input文本框会变成黄色背景，获取焦点时，变成蓝色边框，如下图： 这个背景是Chrome强制加的样式（-webkit-autofill）： 蓝色边框其实不是边框，是outline； outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。 取消黄色背景？这个背景已经是加了!important，CSS样式处于最高优先级，所以替换是不可能的；可以用阴影（box-shadow）来覆盖这个效果。123.loginInput:-webkit-autofill &#123; -webkit-box-shadow: 0 0 0px 1000px white inset!important;&#125; 效果如下： 不过你也可以按自己的喜好，将white换成其他颜色。 取消蓝色边框outline直接设置获取焦点是为 0 或 none 就可以取消蓝色的轮廓了；123.loginInput:focus&#123; outline: 0;&#125;]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>Chrome</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[简单搭建一个Node本地服务器]]></title>
+    <url>%2F2018%2F03%2F09%2F%E7%AE%80%E5%8D%95%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AANode%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[用node搭建一个简单的本地http服务器很容易，功能相当于apache服务器； 1.首先安装nodejs服务（上篇文章有详细介绍，可移步查看）； 2.创建一个新目录，并新建 server.js（我在E:\wwwroot\NodeServer下创建了server.js文件）； 在 server.js 中写入如下代码：1234567891011var http=require('http');//开启服务var server=http.createServer(function(req,res)&#123; console.log('有客户端连接');//创建连接成功显示在后台 res.writeHeader(200,&#123; 'content-type' : 'text/html;charset="utf-8"' &#125;); res.write('这是正文部分');//显示给客户端 res.end();&#125;).listen(8888);console.log('服务器开启成功'); 这样，一个简单的node服务器就搭建完成了；Win + R 打开运行 输入 cmd 打开命令行工具， 3.在cmd控制台中cd切换进server.js所在的目录，然后执行node server.js命令当提示“服务器开启成功”时，在浏览器端输入127.0.0.1:8888；显示“这是正文内容”； 4.进阶-添加 index.html修改 server.js 中代码：（记得将 root 路径改为自己的文件路径）12345678910111213141516171819202122232425var http=require('http');var fs=require('fs'); //引入文件读取模块var root="E:/wwwroot/NodeServer/" //本地文件夹路径//开启服务，监听8888端口var server=http.createServer(function(req,res)&#123; console.log('有客户端连接'); //创建连接成功显示在后台 var url=req.url; var file = root+url; fs.readFile(file,function(err,data)&#123; if(err)&#123; res.writeHeader(404,&#123; 'content-type' : 'text/html;charset="utf-8"' &#125;); res.write('&lt;h1&gt;404错误&lt;/h1&gt;&lt;p&gt;你要找的页面不存在&lt;/p&gt;'); res.end(); &#125;else&#123; res.writeHeader(200,&#123; 'content-type' : 'text/html;charset="utf-8"' &#125;); res.write(data); //将index.html显示在客户端 res.end(); &#125; &#125;)&#125;).listen(8888);console.log('服务器开启成功'); 在该文件夹下再建一个 index.html，内容为“hello world”；然后以刚才的方式，命令行运行 node server.js；浏览器 输入 http://localhost:8888/index.html 即可看见 “hello world”；一个node服务器搭建完成。]]></content>
+      <categories>
+        <category>NodeJS</category>
+      </categories>
+      <tags>
+        <tag>NodeJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[NodeJS安装及环境配置详细教程]]></title>
+    <url>%2F2018%2F03%2F09%2FNodeJS%E5%AE%89%E8%A3%85%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[1.NodeJS安装包下载: 下载地址32位和64位的版本按需下载； 2.msi格式文件，双击安装然后一路 “next”,直到 finish； 3.检查是否安装成功win + R 打开“运行”窗口，输入“cmd”，回车；输入 ngde -v 回车、命令行输出node版本号，说明安装成功；新版的nodejs中集成了npm，所以npm也已经安装好了，输入 npm -v 回车查看版本号；]]></content>
+      <categories>
+        <category>NodeJS</category>
+      </categories>
+      <tags>
+        <tag>NodeJS</tag>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于DIV高度100%无效]]></title>
+    <url>%2F2018%2F03%2F08%2F%E5%85%B3%E4%BA%8EDIV%E9%AB%98%E5%BA%A6100%E6%97%A0%E6%95%88%2F</url>
+    <content type="text"><![CDATA[给DIV设置height:100%时，DIV需要继承父级的高度，当DIV父级没有高度值时，DIV就继承为0；所以，要给她的父级也要设置高度值；如果要设置全屏类型网页，也要给body、html的高度为100%；]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>HTML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[你好_Hexo]]></title>
     <url>%2F2018%2F03%2F07%2F%E4%BD%A0%E5%A5%BD-Hexo%2F</url>
     <content type="text"><![CDATA[A First Level HeaderA Second Level HeaderNow is the time for all good men to come tothe aid of their country. This is just aregular paragraph. The quick brown fox jumped over the lazydog’s back. Header 3 This is a blockquote. This is the second paragraph in the blockquote. This is an H2 in a blockquote]]></content>
