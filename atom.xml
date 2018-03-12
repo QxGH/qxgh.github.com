@@ -37,9 +37,9 @@
       <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
     
     
-      <category term="Chrome" scheme="http://yoursite.com/tags/Chrome/"/>
-    
       <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+      <category term="Chrome" scheme="http://yoursite.com/tags/Chrome/"/>
     
   </entry>
   
@@ -118,9 +118,9 @@
       <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
     
     
-      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
-    
       <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+    
+      <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
   </entry>
   
@@ -170,9 +170,9 @@
       <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
     
     
-      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
-    
       <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
     
   </entry>
   
