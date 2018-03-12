@@ -99,7 +99,7 @@
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/09/9RihjA.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/09/9Rijjs.png">
 <meta property="og:image" content="https://s1.ax1x.com/2018/03/09/9RkQZq.png">
-<meta property="og:updated_time" content="2018-03-12T02:05:06.998Z">
+<meta property="og:updated_time" content="2018-03-12T05:30:54.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chrome自动填充input文本框,黄底蓝边框问题">
 <meta name="twitter:description" content="谷歌浏览器（Chrome）在开启自动填充账号密码功能时，input文本框会变成黄色背景，获取焦点时，变成蓝色边框，如下图：   这个背景是Chrome强制加的样式（-webkit-autofill）：   蓝色边框其实不是边框，是outline； outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。  取消黄色背景？这个背景已经是加了!important，C">
@@ -425,7 +425,7 @@
 <blockquote>
 <p><img src="https://s1.ax1x.com/2018/03/09/9RkQZq.png" alt="9RkQZq.png" border="0"><br>不过你也可以按自己的喜好，将white换成其他颜色。</p>
 </blockquote>
-<h4 id="取消蓝色边框"><a href="#取消蓝色边框" class="headerlink" title="取消蓝色边框"></a>取消蓝色边框</h4><p>outline直接设置获取焦点是为 0 或 none 就可以取消蓝色的轮廓了；<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.loginInput</span><span class="selector-pseudo">:focus</span>&#123;</span><br><span class="line">    <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="取消蓝色边框"><a href="#取消蓝色边框" class="headerlink" title="取消蓝色边框"></a>取消蓝色边框</h4><p>outline直接设置获取焦点是为 0 或 none 就可以取消蓝色的轮廓了。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.loginInput</span><span class="selector-pseudo">:focus</span>&#123;</span><br><span class="line">    <span class="attribute">outline</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>

@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Chrome自动填充input文本框,黄底蓝边框问题]]></title>
     <url>%2F2018%2F03%2F09%2FChrome%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85input%E6%96%87%E6%9C%AC%E6%A1%86-%E9%BB%84%E5%BA%95%E8%93%9D%E8%BE%B9%E6%A1%86%E9%97%AE%E9%A2%98%2F</url>
-    <content type="text"><![CDATA[谷歌浏览器（Chrome）在开启自动填充账号密码功能时，input文本框会变成黄色背景，获取焦点时，变成蓝色边框，如下图： 这个背景是Chrome强制加的样式（-webkit-autofill）： 蓝色边框其实不是边框，是outline； outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。 取消黄色背景？这个背景已经是加了!important，CSS样式处于最高优先级，所以替换是不可能的；可以用阴影（box-shadow）来覆盖这个效果。123.loginInput:-webkit-autofill &#123; -webkit-box-shadow: 0 0 0px 1000px white inset!important;&#125; 效果如下： 不过你也可以按自己的喜好，将white换成其他颜色。 取消蓝色边框outline直接设置获取焦点是为 0 或 none 就可以取消蓝色的轮廓了；123.loginInput:focus&#123; outline: 0;&#125;]]></content>
+    <content type="text"><![CDATA[谷歌浏览器（Chrome）在开启自动填充账号密码功能时，input文本框会变成黄色背景，获取焦点时，变成蓝色边框，如下图： 这个背景是Chrome强制加的样式（-webkit-autofill）： 蓝色边框其实不是边框，是outline； outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。 取消黄色背景？这个背景已经是加了!important，CSS样式处于最高优先级，所以替换是不可能的；可以用阴影（box-shadow）来覆盖这个效果。123.loginInput:-webkit-autofill &#123; -webkit-box-shadow: 0 0 0px 1000px white inset!important;&#125; 效果如下： 不过你也可以按自己的喜好，将white换成其他颜色。 取消蓝色边框outline直接设置获取焦点是为 0 或 none 就可以取消蓝色的轮廓了。123.loginInput:focus&#123; outline: 0;&#125;]]></content>
       <categories>
         <category>CSS</category>
       </categories>
