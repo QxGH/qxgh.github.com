@@ -66,8 +66,8 @@
         <category>hello</category>
       </categories>
       <tags>
-        <tag>hello</tag>
         <tag>test</tag>
+        <tag>hello</tag>
       </tags>
   </entry>
 </search>

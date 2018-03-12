@@ -170,9 +170,9 @@
       <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
     
     
-      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
-    
       <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
     
   </entry>
   
