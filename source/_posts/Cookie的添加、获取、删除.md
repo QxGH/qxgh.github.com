@@ -33,7 +33,7 @@ categories: JavaScript
 		if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString();
 	}
 ```
-## 用法
+## 具体用法
 ``` javascript
 SetCookie('UserName','Admin',30);
 getCookie('UserName');
