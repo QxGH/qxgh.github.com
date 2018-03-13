@@ -22,7 +22,7 @@ categories: CSS
 > <img src="https://s1.ax1x.com/2018/03/09/9RkQZq.png" alt="9RkQZq.png" border="0" />
 不过你也可以按自己的喜好，将white换成其他颜色。
 #### 取消蓝色边框
-outline直接设置获取焦点是为 0 或 none 就可以取消蓝色的轮廓了。
+outline直接设置获取焦点是为 0 或 none 就可以取消蓝色的轮廓了.
 ``` css
 .loginInput:focus{
     outline: 0;
