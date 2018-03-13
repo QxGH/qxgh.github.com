@@ -6,7 +6,7 @@ categories: JavaScript
 ---
 > 常用的会话跟踪技术是Cookie与Session。
 > Cookie是客户端保存用户信息的一种机制，用来记录用户的一些信息，服务器端可以对其进行处理;
-> session是存在服务器的,用于区分会话和不同用户的访问
+> session是存在服务器的,用于区分会话和不同用户的访问；
 ## 设置Cookie
 ``` javascript
 	function SetCookie(name,value,expires){	//cookie的名字、值、存储时间
