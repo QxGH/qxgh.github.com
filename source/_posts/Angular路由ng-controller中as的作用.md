@@ -1,5 +1,5 @@
 ---
-title: Angular路由ng-controller中as vm的作用
+title: Angular路由ng-controller中as的作用
 date: 2018-03-15 17:35:34
 tags: [AngularJS,route]
 categories: AngularJS
