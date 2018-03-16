@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-13T02:35:18.967Z</updated>
+  <updated>2018-03-16T02:06:40.655Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Angular路由ng-controller中as的作用</title>
+    <link href="http://yoursite.com/2018/03/16/Angular%E8%B7%AF%E7%94%B1ng-controller%E4%B8%ADas%E7%9A%84%E4%BD%9C%E7%94%A8/"/>
+    <id>http://yoursite.com/2018/03/16/Angular路由ng-controller中as的作用/</id>
+    <published>2018-03-16T02:00:25.000Z</published>
+    <updated>2018-03-16T02:06:40.655Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><blockquote><p>$scope 会从父级controller创建的作用域进行原型继承，但又不会被覆盖,如下:</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">firstCtrl</span>(<span class="params">$scope</span>)</span>&#123;</span><br><span class="line">$scope.value = <span class="string">"123456"</span>;</span><br><span class="line">&#125;；</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">secondCtrl</span>(<span class="params">$scope</span>)</span>&#123;</span><br><span class="line">$scope.value = <span class="string">"654321"</span>；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"firstCtrl"</span>&gt;</span></span><br><span class="line">&#123;&#123;value&#125;&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"secondCtrl"</span>&gt;</span></span><br><span class="line">&#123;&#123;value&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p>显示结果：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"firstCtrl"</span>&gt;</span></span><br><span class="line">123456</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"secondCtrl"</span>&gt;</span></span><br><span class="line">654321</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p>当secondCtrl中$scope.value被注释后：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">firstCtrl</span>(<span class="params">$scope</span>)</span>&#123;</span><br><span class="line">$scope.value = <span class="string">"123456"</span>;</span><br><span class="line">&#125;；</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">secondCtrl</span>(<span class="params">$scope</span>)</span>&#123;</span><br><span class="line"><span class="comment">// $scope.value = "654321"；</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"firstCtrl"</span>&gt;</span></span><br><span class="line">123456</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"secondCtrl"</span>&gt;</span></span><br><span class="line">123456</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><blockquote><p>在secondCtrl中没有定义value，但是会继承firstCtrl中的 value 显示“123456”；<br>进行原型继承即意味着父作用域在子作用域的原型链上，这是JavaScript的特性；<br>所以在angular 1.2以后有了controller as；</p></blockquote><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"firstCtrl as first"</span>&gt;</span></span><br><span class="line">&#123;&#123;first.value&#125;&#125;</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span> = <span class="string">"secondCtrl as second"</span>&gt;</span></span><br><span class="line">&#123;&#123;second.value&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;$scope 会从父级controller创建的作用域进行原型继承，但又不会被覆盖,如下:&lt;/p&gt;
+&lt;/b
+      
+    
+    </summary>
+    
+      <category term="AngularJS" scheme="http://yoursite.com/categories/AngularJS/"/>
+    
+    
+      <category term="AngularJS" scheme="http://yoursite.com/tags/AngularJS/"/>
+    
+      <category term="route" scheme="http://yoursite.com/tags/route/"/>
+    
+  </entry>
   
   <entry>
     <title>Cookie的添加、获取、删除</title>
@@ -199,9 +228,9 @@
       <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
     
     
-      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
-    
       <category term="test" scheme="http://yoursite.com/tags/test/"/>
+    
+      <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
     
   </entry>
   
