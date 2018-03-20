@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-20T01:27:26.852Z</updated>
+  <updated>2018-03-20T01:30:32.641Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>百度地图API提示label没有宽度问题</title>
-    <link href="http://yoursite.com/2018/03/20/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAPI%E6%8F%90%E7%A4%BAlabel%E6%B2%A1%E6%9C%89%E5%AE%BD%E5%BA%A6%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/2018/03/20/百度地图API提示label没有宽度问题/</id>
+    <title>百度地图API信息窗口label没有宽度问题</title>
+    <link href="http://yoursite.com/2018/03/20/%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BEAPI%E4%BF%A1%E6%81%AF%E7%AA%97%E5%8F%A3label%E6%B2%A1%E6%9C%89%E5%AE%BD%E5%BA%A6%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/03/20/百度地图API信息窗口label没有宽度问题/</id>
     <published>2018-03-20T01:20:23.000Z</published>
-    <updated>2018-03-20T01:27:26.852Z</updated>
+    <updated>2018-03-20T01:30:32.641Z</updated>
     
     <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在百度地图API添加标注信息后，label没有宽度：</p><blockquote><p><img src="https://s1.ax1x.com/2018/03/20/9T12qJ.png" alt="9T12qJ.png" border="0"></p></blockquote><p>原因是由于引入Bootstrop样式，和Bmap样式冲突；</p><h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>重新定义样式</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#Bmap</span> <span class="selector-tag">label</span>&#123;<span class="attribute">max-width</span>:none;&#125;</span><br></pre></td></tr></table></figure><blockquote><p><img src="https://s1.ax1x.com/2018/03/20/9T1gr4.png" alt="9T1gr4.png" border="0"></p></blockquote>]]></content>
     
@@ -257,9 +257,9 @@
       <category term="hello" scheme="http://yoursite.com/categories/hello/"/>
     
     
-      <category term="test" scheme="http://yoursite.com/tags/test/"/>
-    
       <category term="hello" scheme="http://yoursite.com/tags/hello/"/>
+    
+      <category term="test" scheme="http://yoursite.com/tags/test/"/>
     
   </entry>
   
